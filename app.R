@@ -4,7 +4,7 @@ library(shiny)
 ui <- fluidPage(
   
   titlePanel(h1("Mehul Katara",align = "center")),
-  sidebarPanel(
+  sidebarPanel(width = 4,
     img(src = "mehul.jpg"),
     h3("About Me"),
     p("Born in 16 April 1991. I live in Ahmedabad. Actually I am from another city Vijaynagar(S.K)"),
@@ -14,21 +14,19 @@ ui <- fluidPage(
     h3("Contact Me"),
     a("MehulKatara@Hotmail.com"),
     p("Feel free to email me to provide some feedback.","Give me suggestions or ask me for programming related query or to just say hello!")
-  ),
+  ),align="justify",
   mainPanel(
     h3("Experience"),
     column(5, 
     h4("Data Scientist"),
     h6("Apr 2017 → Current (10 months)"),
     p("TM Systems Pvt. Ltd."),
-    p("Technology"),
     code("R,Tableau,Jaspersoft-Studio,PowerBI ")
     ),
     column(5, 
     h4("Data Analyst"),
     h6("Sep 2016 → Apr 2017 (8 months)"),
     p("Inclusive Co-Operative Bank Ltd."),
-    p("Technology"),
     code("R,Networking,Analytics,PowerBI,MS-Office")
     )
     
