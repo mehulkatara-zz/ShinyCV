@@ -1,10 +1,17 @@
 library(shiny)
+join = as.Date('2016-09-16')
+join = format(join,'%b %Y')
+today = as.Date('2017-04-16')
+today = format(today, '%b %Y')
 
+join2 = as.Date('2017-04-16')
+join2=format(join2,'%b %Y')
+today2=format(Sys.time(), '%b %Y')
 # Define UI ----
 ui <- fluidPage(
   
   titlePanel(h1("Mehul Katara",align = "center")),
-  sidebarPanel(width = 4,
+  sidebarPanel(width = 3,
     img(src = "mehul.jpg"),
     h3("About Me"),
     p("Born in 16 April 1991. I live in Ahmedabad. Actually I am from another city Vijaynagar(S.K)"),
@@ -16,21 +23,30 @@ ui <- fluidPage(
     p("Feel free to email me to provide some feedback.","Give me suggestions or ask me for programming related query or to just say hello!")
   ),align="justify",
   mainPanel(
-    h3("Experience"),
+    h3("Experience"),hr(),
+   
     column(5, 
     h4("Data Scientist"),
-    h6("Apr 2017 → Current (10 months)"),
+    h6(paste(join2," to ",today2),strong("Working")),
     p("TM Systems Pvt. Ltd."),
     code("R,Tableau,Jaspersoft-Studio,PowerBI ")
     ),
+    
     column(5, 
     h4("Data Analyst"),
-    h6("Sep 2016 → Apr 2017 (8 months)"),
+    h6(paste(join," to ",today),strong("(8 months)")),
     p("Inclusive Co-Operative Bank Ltd."),
     code("R,Networking,Analytics,PowerBI,MS-Office")
-    )
+    )),
+  
+  mainPanel(
     
+    h3("Certifications"),hr(),
+    img(src = "tableau-icon.png"),
+    h4("Tableau Training & Certification"),
+    p("Jun 2017 (1 month)")
     )
+  
   )
 
 # Define server logic ----
