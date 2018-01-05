@@ -10,7 +10,7 @@ today2=format(Sys.time(), '%b %Y')
 # Define UI ----
 ui <- fluidPage(
   
-  titlePanel(h1("Mehul Katara",align = "center")),
+  titlePanel("Mehul Katara"),
   sidebarPanel(width = 3,
     img(src = "mehul.jpg"),
     h3("About Me"),
@@ -43,7 +43,7 @@ ui <- fluidPage(
     
     h3("Certifications"),hr(),
     img(src = "tableau-icon.png"),
-    h4("Tableau Training & Certification"),
+    h4(tags$a(href="https://www.edureka.co/my-certificate/2ba3ae584ec66972495f3a823531bb05", "Tableau Training & Certification")),
     p("Jun 2017 (1 month)")
     )
   
