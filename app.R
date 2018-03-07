@@ -1,12 +1,15 @@
 library(shiny)
-join = as.Date('2016-09-16')
-join = format(join,'%b %Y')
-today = as.Date('2017-04-16')
-today = format(today, '%b %Y')
+joind = as.Date('2016-09-16')
+joinc = format(joind,'%b %Y')
+todayd = as.Date('2017-04-16')
+todayc = format(todayd, '%b %Y')
+work=todayd-joind
 
-join2 = as.Date('2017-04-16')
-join2=format(join2,'%b %Y')
-today2=format(Sys.time(), '%b %Y')
+join2d = as.Date('2017/04/16')
+join2c=format(join2d,'%b %Y')
+today2d=as.Date(format(Sys.time(), '%Y/%m/%d'))
+today2c=format(today2d, '%b %Y')
+work2=as.character(today2d-join2d)
 # Define UI ----
 ui <- fluidPage(
   
@@ -27,16 +30,16 @@ ui <- fluidPage(
    
     column(5, 
     h4("Data Scientist"),
-    h6(paste(join2," to ",today2),strong("Working")),
+    h6(paste(join2c," to ",today2c),strong(paste("(",work2," Days ) + Working"))),
     p("TM Systems Pvt. Ltd."),
-    code("R,Tableau,Jaspersoft-Studio,PowerBI ")
+    code("R,Tableau(Desktop,Server),Jaspersoft(Studio,Server),PowerBI ")
     ),
     
     column(5, 
     h4("Data Analyst"),
-    h6(paste(join," to ",today),strong("(8 months)")),
+    h6(paste(joinc," to ",todayc),strong(paste("(",work," Days )"))),
     p("Inclusive Co-Operative Bank Ltd."),
-    code("R,Networking,Analytics,PowerBI,MS-Office")
+    code("R,Networking,Analytics,PowerBI")
     )),
   
   mainPanel(
